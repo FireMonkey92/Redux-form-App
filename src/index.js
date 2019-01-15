@@ -5,12 +5,17 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import promiseMiddleware from 'redux-promise';
 import './App.css';
+
+
 import App from './App';
+import Form from './form';
+
+
 import reducers from './reducers'
 
 
 // Components
-import AddMessage  from './addnewMessage';
+
 
 
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
@@ -21,8 +26,8 @@ ReactDOM.render(
         <BrowserRouter>
             <div>
                 <Switch>
-                    <Route path='/addNewMsg' component={AddMessage}/>
-                    <Route exact path='/' component={App} />
+                    <Route path='/addnew' component={Form} ></Route>
+                    <Route path='/' component={App} ></Route>
                 </Switch>
             </div>
         </BrowserRouter>

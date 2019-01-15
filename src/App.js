@@ -6,17 +6,14 @@ import { getAllMessages } from './actions'
 
 
 import './App.css';
-class App extends Component {
-  constructor(props) {
-    super(props)
-  }
 
+
+class App extends Component {
   componentDidMount() {
     this.props.getAllMessages()
   }
 
-  renderList = ( messages) => {
-    console.log(messages)
+  renderList = ({messages}) => {
     if (messages) {
       return messages.map((item) => {
         return (
@@ -29,14 +26,12 @@ class App extends Component {
       })
     }
   }
-
-
   render() {
     return (
       <div className="App">
         <div className="top">
           <h3>Messages</h3>
-          <Link to="/addNewMsg">Add</Link>
+          <Link to="/addnew">Add</Link>
         </div>
         <div className="messages_container">
           {this.renderList(this.props.messages)}
@@ -50,7 +45,7 @@ class App extends Component {
 function mapStateToProps(state) {
   console.log(state);
   return {
-    messages: state.messageReducer.messages
+    messages: state.messageReducer
   }
 }
 
