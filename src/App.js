@@ -1,56 +1,23 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { getAllMessages } from './actions'
-
-
-import './App.css';
-
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Form from './Form';
+import home from './home';
 
 class App extends Component {
-  componentDidMount() {
-    this.props.getAllMessages()
-  }
-
-  renderList = ({messages}) => {
-    if (messages) {
-      return messages.map((item) => {
+    render() {
         return (
-          <div key={item.id} className="item-list">
-            <div className="title">{item.title}</div>
-            <div className="sender">Message from:<span>{item.from}</span></div>
-            <div className="body">{item.message}</div>
-          </div>
-        )
-      })
+
+            <Router>
+                <div>
+                    <Switch>
+                        <Route path='/form' component={Form}></Route>
+                        <Route path='/' component={home}></Route>
+                    </Switch>
+                </div>
+            </Router>
+
+        );
     }
-  }
-  render() {
-    return (
-      <div className="App">
-        <div className="top">
-          <h3>Messages</h3>
-          <Link to="/addnew">Add</Link>
-        </div>
-        <div className="messages_container">
-          {this.renderList(this.props.messages)}
-        </div>
-      </div>
-    );
-  }
 }
 
-
-function mapStateToProps(state) {
-  console.log(state);
-  return {
-    messages: state.messageReducer
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getAllMessages }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

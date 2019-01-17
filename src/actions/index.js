@@ -1,10 +1,11 @@
-const URL = 'http://localhost:3004';
+const URL = 'http://localhost:3004'
 
-export function getAllMessages(){
+export function getMessages() {
+
     const request = fetch(`${URL}/messages`, {
         method: 'GET'
-    }).then(req => req.json())
-    return{
+    }).then(resp => resp.json());
+    return {
         type: 'GET_MESSAGES',
         payload: request
     }
