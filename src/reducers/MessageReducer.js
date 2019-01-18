@@ -5,6 +5,16 @@ export default function (state = {}, action) {
                 ...state,
                 'messages': action.payload
             }
+        case 'ADD_MESSAGES':
+        return {
+            state,
+            'success': action.payload
+        }
+        case 'CLEAR_TEXT':
+        return{
+            state,
+            'success': action.payload
+        }
         default:
             return state;
     }

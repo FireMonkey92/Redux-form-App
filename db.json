@@ -19,10 +19,22 @@
       "from": "Robert"
     },
     {
-      "title": "fffff",
-      "message": "vfgdgdf",
-      "from": "dfdfddf",
+      "title": "Birthday reminder ",
+      "from": "Tanesh",
+      "message": "This is the message for the birthday reminder for you!!",
       "id": 4
+    },
+    {
+      "title": "Movie at 8",
+      "from": "To Chaithra",
+      "message": "Pleaase be ready at 7.30 for movie",
+      "id": 12
+    },
+    {
+      "title": "Movie at 8",
+      "from": "To Chaithra",
+      "message": "Pleaase be ready at 7.30 for movie",
+      "id": 13
     }
   ]
 }

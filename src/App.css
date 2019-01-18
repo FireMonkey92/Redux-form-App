@@ -86,6 +86,11 @@ input,textarea {
 .form-input.has-error textarea {
   border:1px solid #F44336;
 }
+.form-input.no-error input, 
+.form-input.no-error textarea {
+  border:1px solid rgb(52, 170, 72);
+}
+
 
 input:focus ,
 textarea:focus {
@@ -111,6 +116,7 @@ button {
   color: #F44336;
   margin-top: 10px;
 }
+
 
 form {
   padding:20px;
